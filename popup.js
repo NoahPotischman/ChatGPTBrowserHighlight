@@ -1,6 +1,8 @@
 const selectedTextElement = document.getElementById('selected-text');
 const askChatGPTButton = document.getElementById('ask-chatgpt');
 const responseTextArea = document.getElementById('response');
+const manualPromptTextArea = document.getElementById('manual-prompt');
+const addWordsInput = document.getElementById('add-words');
 
 chrome.storage.local.get('selectedText', (data) => {
   if (data.selectedText) {
@@ -12,7 +14,15 @@ chrome.storage.local.get('selectedText', (data) => {
 });
 
 askChatGPTButton.addEventListener('click', async () => {
-  const query = selectedTextElement.innerText;
+  const prependWords = addWordsInput.value.trim();
+  const selectedText = selectedTextElement.innerText;
+  const manualPrompt = manualPromptTextArea.value.trim();
+  const query = manualPrompt || selectedText;
+
+  if (prependWords) {
+    query = `${prependWords} ${query}`;
+  }
+
   responseTextArea.value = 'Fetching response...';
 
   try {
@@ -25,7 +35,7 @@ askChatGPTButton.addEventListener('click', async () => {
 });
 
 async function fetchChatGPTResponse(prompt) {
-  const apiKey = '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';
+  const apiKey = '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';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   const headers = {
