@@ -25,7 +25,7 @@ askChatGPTButton.addEventListener('click', async () => {
 });
 
 async function fetchChatGPTResponse(prompt) {
-  const apiKey = '';
+  const apiKey = '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';
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   const headers = {
