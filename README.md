@@ -12,6 +12,8 @@ A simple Chrome extension that allows users to highlight text on a webpage and a
 - Ask questions related to the selected text
 - Get ChatGPT responses without leaving the browser
 
+
+
 ## Installation
 
 1. Download or clone this repository
