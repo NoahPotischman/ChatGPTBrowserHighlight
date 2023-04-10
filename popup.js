@@ -17,7 +17,7 @@ askChatGPTButton.addEventListener('click', async () => {
   const prependWords = addWordsInput.value.trim();
   const selectedText = selectedTextElement.innerText;
   const manualPrompt = manualPromptTextArea.value.trim();
-  const query = manualPrompt || selectedText;
+  let query = manualPrompt || selectedText; // Changed from 'const' to 'let'
 
   if (prependWords) {
     query = `${prependWords} ${query}`;
@@ -35,7 +35,7 @@ askChatGPTButton.addEventListener('click', async () => {
 });
 
 async function fetchChatGPTResponse(prompt) {
-  const apiKey = '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';
+  const apiKey = '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'
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   const headers = {
