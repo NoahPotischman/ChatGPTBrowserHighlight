@@ -5,6 +5,7 @@ A simple Chrome extension that allows users to highlight text on a webpage and a
 ## Things to note
 1. Please note that a paid openai account is required to use this, because otherwise your API key will be unable to request responses
 2. This program communicates with gpt-3.5-turbo
+3. CURRENTLY NOT WORKING IN GOOGLE DOCS. FIXING SOON.
 
 ## Features
 
