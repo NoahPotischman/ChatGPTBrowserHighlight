@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Highlighter</title>
+    <link id="theme-link" rel="stylesheet" href="purpleblue.css">
   </head>
   <body>
     <h1>ChatGPT Highlighter</h1>
@@ -10,6 +13,8 @@
     <input id="add-words" type="text" placeholder="Add words to prepend (e.g., summarize, expand)">
     <textarea id="response" placeholder="ChatGPT response" readonly></textarea>
     <button id="ask-chatgpt">Ask ChatGPT</button>
+    <!-- Add the theme switcher button -->
+    <button id="theme-switcher">Switch theme</button>
     <script src="popup.js"></script>
   </body>
 </html>

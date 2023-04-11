@@ -35,7 +35,7 @@ askChatGPTButton.addEventListener('click', async () => {
 });
 
 async function fetchChatGPTResponse(prompt) {
-  const apiKey = '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'
+  const apiKey = ''
   const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   const headers = {
@@ -76,3 +76,44 @@ async function fetchChatGPTResponse(prompt) {
     throw new Error('No response from ChatGPT');
   }
 }
+
+// Theme swapper
+
+document.addEventListener('DOMContentLoaded', function () {
+  const themeSwitcher = document.getElementById('theme-switcher');
+  const themeLink = document.getElementById('theme-link');
+
+  const themes = [
+    'css/purpleblue.css',
+    'css/greenorange.css', //
+    'css/aquaorange.css',
+    'css/pinkblue.css',
+    'css/redyellow.css',
+    'css/blueyellow.css',
+    'css/limepurple.css',
+    'css/coralteal.css',
+    'css/rosegold.css',
+    'css/indigocyan.css' //
+  ];
+  
+  
+
+
+  let currentThemeIndex = 0;
+
+  // Retrieve the stored theme and apply it
+  chrome.storage.sync.get('currentThemeIndex', (data) => {
+    if (data.currentThemeIndex !== undefined) {
+      currentThemeIndex = data.currentThemeIndex;
+    }
+    themeLink.setAttribute('href', themes[currentThemeIndex]);
+  });
+
+  themeSwitcher.addEventListener('click', function () {
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+    themeLink.setAttribute('href', themes[currentThemeIndex]);
+
+    // Store the selected theme
+    chrome.storage.sync.set({ currentThemeIndex: currentThemeIndex });
+  });
+});
