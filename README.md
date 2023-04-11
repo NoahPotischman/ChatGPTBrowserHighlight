@@ -8,6 +8,8 @@ A simple Chrome extension that allows users to highlight text on a webpage and a
 
 ## Features
 
+![image](https://user-images.githubusercontent.com/114684575/231011682-32d772a0-e6df-45ba-8c5d-caeab39ea343.png)
+
 - Highlight text on any webpage
 - Ask questions related to the selected text
 - Get ChatGPT responses without leaving the browser
