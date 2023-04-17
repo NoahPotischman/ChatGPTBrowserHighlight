@@ -37,3 +37,6 @@ A simple Chrome extension that allows users to highlight text on a webpage and a
 3. A popup will appear with the selected text and a button to ask ChatGPT
 4. Click the "Ask ChatGPT" button and wait for the response
 5. The response will appear in the same popup
+
+1. You can also copy and paste the question manually into the top box, which will overide whatever text it says is highlighted
+2. You can also add words to prepend the question/statement such as summarize, expand on, etc.
